@@ -1,4 +1,4 @@
-export const navLinks = ['Crochet', 'Beaded', 'Handmade', 'Under ₹999']
+export const navLinks = ['Crochet', 'Beaded', 'Handmade', 'Under ₹650']
 
 export const marqueeItems = [
   '✦ Make it uniquely yours',
@@ -54,7 +54,7 @@ export const craftCategories: CraftCategory[] = [
   },
 ]
 
-export const vibes = ['All Vibes', 'Cottagecore', 'Y2K Pop', 'Clean Girl Luxe', 'Daily Wear', 'Under ₹999']
+export const vibes = ['All Vibes', 'Cottagecore', 'Y2K Pop', 'Clean Girl Luxe', 'Daily Wear', 'Under ₹650']
 
 export const vibeBgs: Record<string, string> = {
   'All Vibes': 'bg-sand',
@@ -62,28 +62,109 @@ export const vibeBgs: Record<string, string> = {
   'Y2K Pop': 'bg-sky',
   'Clean Girl Luxe': 'bg-cream',
   'Daily Wear': 'bg-sand',
-  'Under ₹999': 'bg-blush',
+  'Under ₹650': 'bg-blush',
 }
 
-export interface Product {
-  name: string
-  price: number
-  badge: string
-  vibe: string
-  image: string
-  stripeA: string
-  stripeB: string
-}
+import type { Product } from './types/shop'
+export type { Product }
 
 export const products: Product[] = [
-  { name: 'Diet Coke & Mickey Charm', price: 649, badge: 'Hot Item', vibe: 'Y2K Pop', image: '/images/products/charm-mickey-coke.jpg', stripeA: '#E6F5FA', stripeB: '#d5edf5' },
-  { name: 'Teddy Bear Beaded Trio', price: 699, badge: 'Staff Pick', vibe: 'Cottagecore', image: '/images/products/charm-teddies.jpg', stripeA: '#FCE9E4', stripeB: '#f7d9d2' },
-  { name: 'Dog Lover Pup & Paws Charm', price: 749, badge: 'Customizable', vibe: 'Daily Wear', image: '/images/products/charm-dog-lover.jpg', stripeA: '#F3E2CF', stripeB: '#e9d3b6' },
-  { name: 'The Traveller Charm Trio', price: 899, badge: 'Trending', vibe: 'Clean Girl Luxe', image: '/images/products/charm-traveller.jpg', stripeA: '#C5EBF4', stripeB: '#a9dcea' },
-  { name: 'Rainbow & Sweet Treats Charm', price: 599, badge: 'Under ₹799', vibe: 'Y2K Pop', image: '/images/products/charm-cupcake-rainbow.jpg', stripeA: '#F4CEC5', stripeB: '#eab8ac' },
-  { name: 'Royal Beaded Elephant Charm', price: 799, badge: 'Staff Pick', vibe: 'Cottagecore', image: '/images/products/charm-elephants.jpg', stripeA: '#F3E2CF', stripeB: '#e2c39e' },
-  { name: 'Classic Teddy Bestie Charm', price: 649, badge: 'Under ₹799', vibe: 'Daily Wear', image: '/images/products/charm-teddies.jpg', stripeA: '#E6F5FA', stripeB: '#c1e6f0' },
-  { name: 'Artisan Coffee & Camera Duo', price: 749, badge: 'Customizable', vibe: 'Daily Wear', image: '/images/products/charm-traveller.jpg', stripeA: '#FCE9E4', stripeB: '#f2c4b8' },
+  {
+    id: 'prod-mickey-coke',
+    name: 'Diet Coke & Mickey Charm',
+    price: 550,
+    badge: 'Hot Item',
+    vibe: 'Y2K Pop',
+    craft: 'Beaded & Embroidered',
+    image: '/images/products/charm-mickey-coke.jpg',
+    description: 'Hand-embroidered Diet Coke can charm flanked by classic beaded mouse ears. Made with glass seed beads, secure lobster clasp, and sturdy metal hardware.',
+    stripeA: '#E6F5FA',
+    stripeB: '#d5edf5',
+  },
+  {
+    id: 'prod-teddy-trio',
+    name: 'Teddy Bear Beaded Trio',
+    price: 650,
+    badge: 'Staff Pick',
+    vibe: 'Cottagecore',
+    craft: 'Hand-Embroidered',
+    image: '/images/products/charm-teddies.jpg',
+    description: 'Hand-embroidered trio of bears with shimmering sequin details and pastel beaded ribbons. Perfect for your favorite tote bag, keys, or backpack.',
+    stripeA: '#FCE9E4',
+    stripeB: '#f7d9d2',
+  },
+  {
+    id: 'prod-dog-lover',
+    name: 'Dog Lover Pup & Paws Charm',
+    price: 550,
+    badge: 'Customizable',
+    vibe: 'Daily Wear',
+    craft: 'Beaded Embroidery',
+    image: '/images/products/charm-dog-lover.jpg',
+    description: 'Sweet handmade puppy with heart-shaped sunglasses and double paw print charms. Crafted with love for pet lovers.',
+    stripeA: '#F3E2CF',
+    stripeB: '#e9d3b6',
+  },
+  {
+    id: 'prod-traveller-trio',
+    name: 'The Traveller Charm Trio',
+    price: 650,
+    badge: 'Trending',
+    vibe: 'Clean Girl Luxe',
+    craft: 'Artisan Beadwork',
+    image: '/images/products/charm-traveller.jpg',
+    description: 'Curated explorer set featuring hand-beaded coffee cup, vintage camera, and popcorn bag charms with gold-tone hardware.',
+    stripeA: '#C5EBF4',
+    stripeB: '#a9dcea',
+  },
+  {
+    id: 'prod-rainbow-cupcake',
+    name: 'Rainbow & Sweet Treats Charm',
+    price: 550,
+    badge: 'Under ₹650',
+    vibe: 'Y2K Pop',
+    craft: 'Seed Bead Work',
+    image: '/images/products/charm-cupcake-rainbow.jpg',
+    description: 'Vibrant rainbow arc and frosted cupcake charms with delicate pearl seed beads and high-shine crystals.',
+    stripeA: '#F4CEC5',
+    stripeB: '#eab8ac',
+  },
+  {
+    id: 'prod-elephant-jewel',
+    name: 'Royal Beaded Elephant Charm',
+    price: 650,
+    badge: 'Staff Pick',
+    vibe: 'Cottagecore',
+    craft: 'Handmade Jeweled',
+    image: '/images/products/charm-elephants.jpg',
+    description: 'Ornate elephant charms with sparkling teardrop gems, intricate mosaic beading, and soft metallic trim.',
+    stripeA: '#F3E2CF',
+    stripeB: '#e2c39e',
+  },
+  {
+    id: 'prod-bestie-duo',
+    name: 'Classic Teddy Bestie Charm',
+    price: 550,
+    badge: 'Buy with Friends',
+    vibe: 'Daily Wear',
+    craft: 'Hand-Embroidered',
+    image: '/images/products/charm-teddies.jpg',
+    description: 'Cute handcrafted teddy charm designed to stack or gift to your closest friend.',
+    stripeA: '#E6F5FA',
+    stripeB: '#c1e6f0',
+  },
+  {
+    id: 'prod-camera-coffee',
+    name: 'Artisan Coffee & Camera Duo',
+    price: 650,
+    badge: 'Customizable',
+    vibe: 'Daily Wear',
+    craft: 'Beaded Duo',
+    image: '/images/products/charm-traveller.jpg',
+    description: 'Handcrafted morning coffee and camera charm duo designed for daily commutes and weekend adventures.',
+    stripeA: '#FCE9E4',
+    stripeB: '#f2c4b8',
+  },
 ]
 
 export interface Reel {
@@ -95,10 +176,10 @@ export interface Reel {
 }
 
 export const reels: Reel[] = [
-  { title: 'Pup & paws charm showcase', price: 749, image: '/images/products/charm-dog-lover.jpg', stripeA: '#F3E2CF', stripeB: '#e9d3b6' },
-  { title: 'The traveller charm unboxing', price: 899, image: '/images/products/charm-traveller.jpg', stripeA: '#C5EBF4', stripeB: '#a9dcea' },
-  { title: 'Teddy bear charm styling', price: 699, image: '/images/products/charm-teddies.jpg', stripeA: '#F4CEC5', stripeB: '#eab8ac' },
-  { title: 'Sweet rainbow & treats stack', price: 599, image: '/images/products/charm-cupcake-rainbow.jpg', stripeA: '#F3E2CF', stripeB: '#e2c39e' },
+  { title: 'Pup & paws charm showcase', price: 550, image: '/images/products/charm-dog-lover.jpg', stripeA: '#F3E2CF', stripeB: '#e9d3b6' },
+  { title: 'The traveller charm unboxing', price: 650, image: '/images/products/charm-traveller.jpg', stripeA: '#C5EBF4', stripeB: '#a9dcea' },
+  { title: 'Teddy bear charm styling', price: 650, image: '/images/products/charm-teddies.jpg', stripeA: '#F4CEC5', stripeB: '#eab8ac' },
+  { title: 'Sweet rainbow & treats stack', price: 550, image: '/images/products/charm-cupcake-rainbow.jpg', stripeA: '#F3E2CF', stripeB: '#e2c39e' },
 ]
 
 export const footerTags = ['Customer Service', 'Track My Order', '@inayara.co · IG', '@inayara · TikTok']
