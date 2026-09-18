@@ -30,7 +30,7 @@ export default function ShopByVibe() {
         ))}
       </div>
       {filteredProducts.length === 0 ? (
-        <p className="text-center text-sm text-mocha">No pieces in this vibe yet — check back soon.</p>
+        <p className="text-center text-sm text-mocha">No pieces in this vibe yet. Check back soon.</p>
       ) : (
         <div className="mx-auto grid max-w-[1200px] grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-5">
           {filteredProducts.map((p) => (
@@ -39,12 +39,21 @@ export default function ShopByVibe() {
                 {p.badge}
               </div>
               <div className="absolute top-2.5 right-2.5 z-10 cursor-pointer text-base">♡</div>
-              <StripedPlaceholder label="product photo" stripeA={p.stripeA} stripeB={p.stripeB} className="h-[160px] rounded-none" />
+              {p.image ? (
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  loading="lazy"
+                  className="h-[180px] w-full object-cover"
+                />
+              ) : (
+                <StripedPlaceholder label="product photo" stripeA={p.stripeA} stripeB={p.stripeB} className="h-[160px] rounded-none" />
+              )}
               <div className="p-3.5">
                 <div className="mb-1 font-display text-[15px]">{p.name}</div>
                 <div className="mb-2.5 text-[13px] text-mocha">₹{p.price}</div>
-                <button className="w-full cursor-pointer rounded-full border border-tan bg-sand py-2 text-xs font-bold text-ink">
-                  + Quick Add
+                <button className="w-full cursor-pointer rounded-full border border-tan bg-sand py-2 text-xs font-bold text-ink transition-colors hover:bg-tan/40">
+                  Explore Now
                 </button>
               </div>
             </div>

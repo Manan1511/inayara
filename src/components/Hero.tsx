@@ -32,7 +32,16 @@ export default function Hero() {
             key={card.label}
             className={`absolute rounded-[18px] border border-tan p-2.5 pb-[22px] shadow-[0_12px_24px_-14px_rgba(59,42,26,0.3)] ${card.bg} ${card.rotate} ${card.pos}`}
           >
-            <StripedPlaceholder label={card.caption} stripeA={card.stripeA} stripeB={card.stripeB} className="h-[180px]" />
+            {card.image ? (
+              <img
+                src={card.image}
+                alt={card.label}
+                loading="lazy"
+                className="h-[180px] w-full rounded-xl object-cover"
+              />
+            ) : (
+              <StripedPlaceholder label={card.caption} stripeA={card.stripeA} stripeB={card.stripeB} className="h-[180px]" />
+            )}
             <div className="mt-2.5 text-center font-display text-[13px]">{card.label}</div>
           </div>
         ))}

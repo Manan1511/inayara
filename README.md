@@ -1,6 +1,6 @@
 # inayara
 
-Landing page for inayara — handcrafted crochet, beaded, and handmade accessories. Built with React, TypeScript, Vite, and Tailwind CSS.
+Landing page for inayara: handcrafted crochet, beaded, and handmade accessories. Built with React, TypeScript, Vite, and Tailwind CSS.
 
 ## Development
 

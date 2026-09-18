@@ -13,7 +13,7 @@ export default function ShopByCraft() {
           Shop by Craft
         </h2>
         <p className="m-0 mb-8 text-center text-mocha">
-          Crochet, beaded, and handmade — every piece made by hand, start to finish.
+          Crochet, beaded, and handmade: every piece is made by hand, start to finish.
         </p>
 
         <div className="mb-8 flex flex-wrap justify-center gap-3">
@@ -31,12 +31,21 @@ export default function ShopByCraft() {
         </div>
 
         <div className="grid grid-cols-1 items-center gap-7 rounded-[20px] border border-tan bg-cream p-8 md:grid-cols-2">
-          <StripedPlaceholder
-            label={`${active.label.toLowerCase()} collection photo`}
-            stripeA={active.stripeA}
-            stripeB={active.stripeB}
-            className="h-[220px]"
-          />
+          {active.image ? (
+            <img
+              src={active.image}
+              alt={`${active.label} collection`}
+              loading="lazy"
+              className="h-[260px] w-full rounded-2xl object-cover"
+            />
+          ) : (
+            <StripedPlaceholder
+              label={`${active.label.toLowerCase()} collection photo`}
+              stripeA={active.stripeA}
+              stripeB={active.stripeB}
+              className="h-[220px]"
+            />
+          )}
           <div>
             <h3 className="m-0 mb-2 font-display text-xl">{active.tagline}</h3>
             <p className="m-0 mb-5 text-sm leading-normal text-mocha">{active.copy}</p>
