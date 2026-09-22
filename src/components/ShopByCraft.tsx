@@ -10,10 +10,10 @@ export default function ShopByCraft() {
     <section id="shop-by-craft" className="border-y border-tan bg-sand px-4 py-10 sm:px-7 sm:py-14 scroll-mt-16 sm:scroll-mt-20">
       <div className="mx-auto max-w-[1040px]">
         <h2 className="m-0 mb-2 text-center font-display text-[clamp(26px,3.4vw,38px)] font-semibold text-ink">
-          Shop by Craft
+          Shop by Category
         </h2>
         <p className="m-0 mb-7 text-center text-sm sm:text-base text-mocha">
-          Crochet, beaded, and handmade: every piece is made by hand, start to finish.
+          Bags, pouches, charms, clips, and scrunchies: handcrafted start to finish.
         </p>
 
         <div className="mb-8 flex flex-wrap justify-center gap-2.5 sm:gap-3">

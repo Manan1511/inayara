@@ -4,6 +4,7 @@ export interface Product {
   price: number
   badge: string
   vibe: string
+  category?: string
   image: string
   description?: string
   craft?: string

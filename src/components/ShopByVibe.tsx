@@ -4,20 +4,26 @@ import { useCart } from '../context/useCart'
 import StripedPlaceholder from './StripedPlaceholder'
 
 export default function ShopByVibe() {
-  const [activeVibe, setActiveVibe] = useState('All Vibes')
+  const [activeVibe, setActiveVibe] = useState('All Pieces')
   const { setSelectedProduct } = useCart()
 
   const filteredProducts = products.filter((p) => {
-    if (activeVibe === 'All Vibes') return true
+    if (activeVibe === 'All Pieces' || activeVibe === 'All Vibes') return true
     if (activeVibe === 'Under ₹650' || activeVibe === 'Under ₹999') return p.price <= 650
-    return p.vibe === activeVibe
+    if (activeVibe === 'Crochet') return p.craft?.toLowerCase().includes('crochet')
+    if (activeVibe === 'Beaded') return p.craft?.toLowerCase().includes('bead')
+    if (activeVibe === 'Handmade') return p.craft?.toLowerCase().includes('handmade')
+    return p.vibe === activeVibe || p.category === activeVibe
   })
 
   return (
     <section id="shop-by-vibe" className="px-4 py-10 sm:px-7 sm:py-14 scroll-mt-16 sm:scroll-mt-20">
-      <h2 className="m-0 mb-6 text-center font-display text-[clamp(26px,3.4vw,38px)] font-semibold">
-        Shop By Vibe
+      <h2 className="m-0 mb-2 text-center font-display text-[clamp(26px,3.4vw,38px)] font-semibold text-ink">
+        Shop by Craft
       </h2>
+      <p className="m-0 mb-6 text-center text-sm sm:text-base text-mocha">
+        Explore our collection by technique: crochet, glass beadwork, or handmade artistry.
+      </p>
       <div className="mb-6 flex flex-wrap justify-center gap-2 overflow-x-auto px-1 py-1 sm:gap-2.5">
         {vibes.map((vibe) => (
           <button

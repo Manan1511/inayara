@@ -17,7 +17,7 @@ export default function Header() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
     e.preventDefault()
     let targetId = 'shop-by-vibe'
-    if (link === 'Crochet' || link === 'Beaded' || link === 'Handmade') {
+    if (link === 'Categories') {
       targetId = 'shop-by-craft'
     }
 
@@ -50,7 +50,7 @@ export default function Header() {
         {navLinks.map((link) => (
           <a
             key={link}
-            href={link === 'Under ₹650' ? '#shop-by-vibe' : '#shop-by-craft'}
+            href={link === 'Categories' ? '#shop-by-craft' : '#shop-by-vibe'}
             onClick={(e) => handleNavClick(e, link)}
             className="relative text-xs font-semibold text-ink no-underline transition-colors hover:text-cocoa md:text-sm after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-cocoa after:transition-all hover:after:w-full"
           >
