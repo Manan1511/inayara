@@ -9,7 +9,6 @@ export default function ShopByVibe() {
 
   const filteredProducts = products.filter((p) => {
     if (activeVibe === 'All Pieces' || activeVibe === 'All Vibes') return true
-    if (activeVibe === 'Under ₹650' || activeVibe === 'Under ₹999') return p.price <= 650
     if (activeVibe === 'Crochet') return p.craft?.toLowerCase().includes('crochet')
     if (activeVibe === 'Beaded') return p.craft?.toLowerCase().includes('bead')
     if (activeVibe === 'Handmade') return p.craft?.toLowerCase().includes('handmade')

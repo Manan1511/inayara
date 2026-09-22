@@ -1,4 +1,4 @@
-export const navLinks = ['Categories', 'Crochet', 'Beaded', 'Handmade', 'Under ₹650']
+export const navLinks = ['Categories', 'Crochet', 'Beaded', 'Handmade']
 
 export const marqueeItems = [
   '✦ Make it uniquely yours',
@@ -98,14 +98,13 @@ export const craftCategories: CraftCategory[] = [
   },
 ]
 
-export const vibes = ['All Pieces', 'Crochet', 'Beaded', 'Handmade', 'Under ₹650']
+export const vibes = ['All Pieces', 'Crochet', 'Beaded', 'Handmade']
 
 export const vibeBgs: Record<string, string> = {
   'All Pieces': 'bg-sand',
   Crochet: 'bg-blush',
   Beaded: 'bg-sky',
   Handmade: 'bg-sand',
-  'Under ₹650': 'bg-blush',
 }
 
 import type { Product } from './types/shop'
@@ -168,7 +167,7 @@ export const products: Product[] = [
     id: 'prod-rainbow-cupcake',
     name: 'Rainbow & Sweet Treats Charm',
     price: 550,
-    badge: 'Under ₹650',
+    badge: 'Best Seller',
     vibe: 'Beaded',
     craft: 'Beaded',
     category: 'Neck charms',
